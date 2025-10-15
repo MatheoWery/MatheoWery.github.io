@@ -3,233 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Mathéo Wery | Étudiant BTS SIO SISR</title>
-  <meta name="description" content="CV de Mathéo Wery, étudiant BTS SIO option SISR, spécialisé en administration système et réseaux. En recherche d'alternance.">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-    }
-
-    header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .section {
-      margin-bottom: 15px;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .section:hover {
-      border-color: #667eea;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-    }
-
-    .section-header {
-      background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease;
-    }
-
-    .section-header:hover {
-      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-    }
-
-    .section-header h2 {
-      font-size: 1.5rem;
-      color: #667eea;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .toggle-icon {
-      font-size: 1.5rem;
-      color: #667eea;
-      transition: transform 0.3s ease;
-      font-weight: bold;
-    }
-
-    .section.active .toggle-icon {
-      transform: rotate(180deg);
-    }
-
-    .section-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      padding: 0 25px;
-    }
-
-    .section.active .section-content {
-      max-height: 1000px;
-      padding: 25px;
-    }
-
-    .section-content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .section-content li {
-      padding: 12px 0;
-      padding-left: 25px;
-      position: relative;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .section-content li:last-child {
-      border-bottom: none;
-    }
-
-    .section-content li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #667eea;
-      font-weight: bold;
-    }
-
-    .section-content p {
-      padding: 15px 0;
-      text-align: justify;
-    }
-
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
-
-    footer a {
-      color: #667eea;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    footer a:hover {
-      color: #764ba2;
-      text-decoration: underline;
-    }
-
-    .icon {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .section-header h2 {
-        font-size: 1.2rem;
-      }
-
-      main {
-        padding: 15px;
-      }
-
-      .section-header {
-        padding: 15px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-
-      header {
-        padding: 30px 20px;
-      }
-
-      .section-header h2 {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* Animation d'entrée */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section {
-      animation: fadeIn 0.5s ease forwards;
-    }
-
-    .section:nth-child(1) { animation-delay: 0.1s; }
-    .section:nth-child(2) { animation-delay: 0.2s; }
-    .section:nth-child(3) { animation-delay: 0.3s; }
-    .section:nth-child(4) { animation-delay: 0.4s; }
-    .section:nth-child(5) { animation-delay: 0.5s; }
-  </style>
+  <title>CV - Mathéo Wery | BTS SIO SISR</title>
+  <meta name="description" content="CV de Mathéo Wery, étudiant BTS SIO option SISR, spécialisé en administration système et réseaux.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -240,7 +16,7 @@
 
     <main>
       <section class="section active" id="profil">
-        <div class="section-header" onclick="toggleSection('profil')">
+        <div class="section-header">
           <h2>👤 Profil</h2>
           <span class="toggle-icon">▼</span>
         </div>
@@ -250,7 +26,7 @@
       </section>
 
       <section class="section" id="competences">
-        <div class="section-header" onclick="toggleSection('competences')">
+        <div class="section-header">
           <h2>🛠️ Compétences</h2>
           <span class="toggle-icon">▼</span>
         </div>
@@ -266,7 +42,7 @@
       </section>
 
       <section class="section" id="formation">
-        <div class="section-header" onclick="toggleSection('formation')">
+        <div class="section-header">
           <h2>🎓 Formation</h2>
           <span class="toggle-icon">▼</span>
         </div>
@@ -282,7 +58,7 @@
       </section>
 
       <section class="section" id="experience">
-        <div class="section-header" onclick="toggleSection('experience')">
+        <div class="section-header">
           <h2>💼 Expériences</h2>
           <span class="toggle-icon">▼</span>
         </div>
@@ -296,7 +72,7 @@
       </section>
 
       <section class="section" id="loisirs">
-        <div class="section-header" onclick="toggleSection('loisirs')">
+        <div class="section-header">
           <h2>⚽ Centres d'intérêt</h2>
           <span class="toggle-icon">▼</span>
         </div>
@@ -315,16 +91,6 @@
     </footer>
   </div>
 
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      section.classList.toggle('active');
-    }
-
-    // Ouvrir la première section par défaut au chargement
-    document.addEventListener('DOMContentLoaded', function() {
-      // La section profil est déjà active via la classe dans le HTML
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
