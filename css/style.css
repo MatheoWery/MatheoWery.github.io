@@ -11,8 +11,10 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 20px;
+  overflow-x: hidden;
 }
 
+/* ====== CONTAINER ====== */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -20,8 +22,11 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  transform: scale(0.97);
+  animation: pop-in 0.8s ease forwards;
 }
 
+/* ====== HEADER ====== */
 header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -40,6 +45,7 @@ header p {
   opacity: 0.95;
 }
 
+/* ====== SECTIONS ====== */
 main {
   padding: 20px;
 }
@@ -50,7 +56,16 @@ main {
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
+  transform: translateY(15px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
+
+.section:nth-child(1) { animation-delay: 0.2s; }
+.section:nth-child(2) { animation-delay: 0.4s; }
+.section:nth-child(3) { animation-delay: 0.6s; }
+.section:nth-child(4) { animation-delay: 0.8s; }
+.section:nth-child(5) { animation-delay: 1s; }
 
 .section:hover {
   border-color: #667eea;
@@ -93,8 +108,9 @@ main {
 .section-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition: max-height 0.5s ease, padding 0.5s ease;
   padding: 0 25px;
+  background: #fff;
 }
 
 .section.active .section-content {
@@ -111,6 +127,7 @@ main {
   padding-left: 25px;
   position: relative;
   border-bottom: 1px solid #f0f0f0;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .section-content li:last-child {
@@ -130,6 +147,7 @@ main {
   text-align: justify;
 }
 
+/* ====== FOOTER ====== */
 footer {
   background: #2c3e50;
   color: white;
@@ -141,6 +159,7 @@ footer a {
   color: #667eea;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -148,7 +167,33 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  to { transform: scale(1); }
+}
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   body { padding: 10px; }
   header h1 { font-size: 2rem; }
