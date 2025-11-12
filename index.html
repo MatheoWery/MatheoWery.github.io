@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV - Mathéo Wery | BTS SIO SISR</title>
-  <meta name="description" content="CV de Mathéo Wery, étudiant BTS SIO option SISR, spécialisé en administration système et réseaux.">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://matheowery.github.io/">
+  <title>CV – Mathéo Wery | Étudiant BTS SIO SISR</title>
+  <meta name="description" content="CV web de Mathéo Wery, étudiant en BTS SIO option SISR. Passionné d’informatique, réseaux et cybersécurité, à la recherche d’une alternance.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container fade-in">
-    <header class="slide-down">
+  <header>
+    <div class="container header-container">
       <h1>Mathéo Wery</h1>
-      <p>Étudiant en BTS SIO – option SISR</p>
-    </header>
+      <p>🎓 Étudiant en BTS SIO – Option SISR</p>
+      <nav>
+        <ul>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#experience">Expériences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-      <section class="section active" id="profil">
-        <div class="section-header">
-          <h2>👤 Profil</h2>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content">
-          <p>Je suis actuellement étudiant en BTS SIO (Services Informatiques aux Organisations), option SISR. Passionné par l'informatique et les réseaux, je souhaite approfondir mes compétences en administration système et en cybersécurité.</p>
-        </div>
-      </section>
+  <main>
+    <!-- PROFIL -->
+    <section id="profil" class="section visible">
+      <h2>👤 Profil</h2>
+      <p>
+        Étudiant en BTS Services Informatiques aux Organisations (option SISR),
+        passionné par l’administration système, la cybersécurité et les réseaux.
+        Je recherche une alternance pour renforcer mes compétences techniques
+        et contribuer à la gestion d’infrastructures informatiques fiables.
+      </p>
+    </section>
 
-      <section class="section" id="competences">
-        <div class="section-header">
-          <h2>🛠️ Compétences</h2>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content">
-          <ul>
-            <li>Configuration et maintenance de réseaux</li>
-            <li>Administration système</li>
-            <li>Réparation et dépannage d'appareils informatiques</li>
-            <li>Création et lecture de schémas techniques</li>
-            <li>Utilisation d'outils comme PuTTY et Packet Tracer</li>
-          </ul>
-        </div>
-      </section>
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="section">
+      <h2>🛠️ Compétences techniques</h2>
+      <ul>
+        <li><strong>Réseaux :</strong> configuration de routeurs/switchs Cisco, VLAN, DHCP, DNS</li>
+        <li><strong>Systèmes :</strong> Windows Server, Linux (Debian/Ubuntu), scripts Bash</li>
+        <li><strong>Outils :</strong> Packet Tracer, PuTTY, Wireshark, GitHub</li>
+        <li><strong>Cybersécurité :</strong> gestion des droits, sauvegardes, supervision</li>
+        <li><strong>Développement :</strong> HTML, CSS, Python, scripts PowerShell</li>
+      </ul>
+    </section>
 
-      <section class="section" id="formation">
-        <div class="section-header">
-          <h2>🎓 Formation</h2>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content">
-          <ul>
-            <li>BTS SIO – Option SISR (en cours)</li>
-            <li>Bac Pro SN option RISC – Lycée Pierre Desgranges (obtenu)</li>
-            <li>DNB mention AB</li>
-            <li>Habilitations électriques : B0, B1V, BR</li>
-            <li>Permis B obtenu</li>
-          </ul>
-        </div>
-      </section>
+    <!-- FORMATION -->
+    <section id="formation" class="section">
+      <h2>🎓 Formation</h2>
+      <article>
+        <h3>BTS SIO – Option SISR</h3>
+        <p>Lycée des Granges, Andrézieux – En cours</p>
+      </article>
+      <article>
+        <h3>Bac Pro SN option RISC</h3>
+        <p>Lycée Pierre Desgranges – Obtenu (mention AB)</p>
+      </article>
+      <ul class="certifs">
+        <li>⚡ Habilitations électriques : B0, B1V, BR</li>
+        <li>🚗 Permis B obtenu</li>
+      </ul>
+    </section>
 
-      <section class="section" id="experience">
-        <div class="section-header">
-          <h2>💼 Expériences</h2>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content">
-          <ul>
-            <li>Alternance en BTS SIO – Loire Industrie (depuis 2025)</li>
-            <li>Stage de Terminale – Service informatique, Loire Industrie</li>
-            <li>Stage de Première – SEKENS</li>
-          </ul>
-        </div>
-      </section>
+    <!-- EXPÉRIENCES -->
+    <section id="experience" class="section">
+      <h2>💼 Expériences professionnelles</h2>
+      <article>
+        <h3>Alternance – Loire Industrie (2025–présent)</h3>
+        <p>Maintenance réseau, support utilisateurs, création de scripts d’automatisation.</p>
+      </article>
+      <article>
+        <h3>Stage – Loire Industrie (2024)</h3>
+        <p>Assistance technique, déploiement d’équipements réseau, gestion d’adressage IP.</p>
+      </article>
+      <article>
+        <h3>Stage – SEKENS (2023)</h3>
+        <p>Montage et configuration de PC, installation d’imprimantes en réseau.</p>
+      </article>
+    </section>
 
-      <section class="section" id="loisirs">
-        <div class="section-header">
-          <h2>⚽ Centres d'intérêt</h2>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content">
-          <ul>
-            <li>Jeux vidéo</li>
-            <li>Football</li>
-            <li>Cinéma</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>📫 Contact</h2>
+      <p>Vous pouvez me contacter via mon profil GitHub :</p>
+      <p><a href="https://github.com/MatheoWery" target="_blank" rel="noopener noreferrer">🌐 github.com/MatheoWery</a></p>
+    </section>
+  </main>
 
-    <footer class="fade-up">
-      <p>💻 <a href="https://github.com/MatheoWery" target="_blank" rel="noopener noreferrer">Visitez mon profil GitHub</a></p>
-    </footer>
-  </div>
+  <footer>
+    <p>© 2025 – Mathéo Wery. Projet BTS SIO – CV Web | <a href="https://github.com/MatheoWery" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
