@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,97 +6,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://matheowery.github.io/">
-  <title>CV – Mathéo Wery | Étudiant BTS SIO SISR</title>
-  <meta name="description" content="CV web de Mathéo Wery, étudiant en BTS SIO option SISR. Passionné d’informatique, réseaux et cybersécurité, à la recherche d’une alternance.">
-  <link rel="stylesheet" href="style.css">
+  <title>Mathéo Wery – CV Web BTS SIO SISR</title>
+  <meta name="description" content="CV moderne et interactif de Mathéo Wery, étudiant en BTS SIO option SISR. Passionné d'administration système, réseaux et cybersécurité.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --main: #6c63ff;
+      --second: #8a2be2;
+      --bg: #0f172a;
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --text: #f1f5f9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--main), var(--second));
+      color: white;
+    }
+
+    .hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: white;
+      color: var(--main);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #eee;
+      transform: scale(1.05);
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1000px;
+      margin: -80px auto 50px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h2 {
+      color: var(--main);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .card li::before {
+      content: "▸ ";
+      color: var(--main);
+    }
+
+    h3 { color: var(--second); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 25px;
+      border-radius: 25px;
+      background: var(--main);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--second);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer a { color: var(--main); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container header-container">
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
       <h1>Mathéo Wery</h1>
-      <p>🎓 Étudiant en BTS SIO – Option SISR</p>
-      <nav>
-        <ul>
-          <li><a href="#profil">Profil</a></li>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#formation">Formation</a></li>
-          <li><a href="#experience">Expériences</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <p>💻 Étudiant en BTS SIO – Option SISR</p>
+      <a href="#profil" class="cta">Découvrir mon profil</a>
     </div>
   </header>
 
   <main>
-    <!-- PROFIL -->
-    <section id="profil" class="section visible">
+    <section id="profil" class="card">
       <h2>👤 Profil</h2>
-      <p>
-        Étudiant en BTS Services Informatiques aux Organisations (option SISR),
-        passionné par l’administration système, la cybersécurité et les réseaux.
-        Je recherche une alternance pour renforcer mes compétences techniques
-        et contribuer à la gestion d’infrastructures informatiques fiables.
-      </p>
+      <p>Étudiant passionné d’informatique et de réseaux, je prépare un BTS SIO option SISR. Je souhaite devenir administrateur systèmes et réseaux, avec un fort intérêt pour la cybersécurité et l’automatisation.</p>
     </section>
 
-    <!-- COMPÉTENCES -->
-    <section id="competences" class="section">
-      <h2>🛠️ Compétences techniques</h2>
-      <ul>
-        <li><strong>Réseaux :</strong> configuration de routeurs/switchs Cisco, VLAN, DHCP, DNS</li>
-        <li><strong>Systèmes :</strong> Windows Server, Linux (Debian/Ubuntu), scripts Bash</li>
-        <li><strong>Outils :</strong> Packet Tracer, PuTTY, Wireshark, GitHub</li>
-        <li><strong>Cybersécurité :</strong> gestion des droits, sauvegardes, supervision</li>
-        <li><strong>Développement :</strong> HTML, CSS, Python, scripts PowerShell</li>
-      </ul>
+    <section id="competences" class="card">
+      <h2>🛠️ Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill"><h3>Réseaux</h3><p>Configuration Cisco, VLAN, DHCP, DNS</p></div>
+        <div class="skill"><h3>Systèmes</h3><p>Linux, Windows Server, scripts Bash</p></div>
+        <div class="skill"><h3>Cybersécurité</h3><p>Gestion des droits, supervision, sauvegardes</p></div>
+        <div class="skill"><h3>Outils</h3><p>Packet Tracer, PuTTY, Git, Wireshark</p></div>
+        <div class="skill"><h3>Développement</h3><p>HTML, CSS, Python, PowerShell</p></div>
+      </div>
     </section>
 
-    <!-- FORMATION -->
-    <section id="formation" class="section">
+    <section id="formation" class="card">
       <h2>🎓 Formation</h2>
-      <article>
-        <h3>BTS SIO – Option SISR</h3>
-        <p>Lycée des Granges, Andrézieux – En cours</p>
-      </article>
-      <article>
-        <h3>Bac Pro SN option RISC</h3>
-        <p>Lycée Pierre Desgranges – Obtenu (mention AB)</p>
-      </article>
-      <ul class="certifs">
+      <ul>
+        <li><strong>BTS SIO – Option SISR</strong> – En cours au lycée des Granges</li>
+        <li><strong>Bac Pro SN option RISC</strong> – Lycée Pierre Desgranges (mention AB)</li>
         <li>⚡ Habilitations électriques : B0, B1V, BR</li>
         <li>🚗 Permis B obtenu</li>
       </ul>
     </section>
 
-    <!-- EXPÉRIENCES -->
-    <section id="experience" class="section">
-      <h2>💼 Expériences professionnelles</h2>
+    <section id="experience" class="card">
+      <h2>💼 Expériences</h2>
       <article>
         <h3>Alternance – Loire Industrie (2025–présent)</h3>
-        <p>Maintenance réseau, support utilisateurs, création de scripts d’automatisation.</p>
+        <p>Maintenance réseau, support technique, scripts d’automatisation.</p>
       </article>
       <article>
         <h3>Stage – Loire Industrie (2024)</h3>
-        <p>Assistance technique, déploiement d’équipements réseau, gestion d’adressage IP.</p>
+        <p>Déploiement d’équipements réseau et configuration IP.</p>
       </article>
       <article>
         <h3>Stage – SEKENS (2023)</h3>
-        <p>Montage et configuration de PC, installation d’imprimantes en réseau.</p>
+        <p>Montage et maintenance de postes informatiques.</p>
       </article>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="card">
       <h2>📫 Contact</h2>
-      <p>Vous pouvez me contacter via mon profil GitHub :</p>
-      <p><a href="https://github.com/MatheoWery" target="_blank" rel="noopener noreferrer">🌐 github.com/MatheoWery</a></p>
+      <p>Retrouvez-moi sur mon profil GitHub :</p>
+      <a href="https://github.com/MatheoWery" class="btn" target="_blank">🌐 github.com/MatheoWery</a>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 – Mathéo Wery. Projet BTS SIO – CV Web | <a href="https://github.com/MatheoWery" target="_blank" rel="noopener">GitHub</a></p>
+    <p>© 2025 – Mathéo Wery | Projet BTS SIO | <a href="https://github.com/MatheoWery" target="_blank">GitHub</a></p>
   </footer>
 
-  <script src="app.js" defer></script>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
