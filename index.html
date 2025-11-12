@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -93,42 +92,62 @@
       background: var(--card-bg);
       backdrop-filter: blur(12px);
       border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
+      overflow: hidden;
+      margin: 1.5rem 0;
       box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
+      transition: all 0.3s ease;
     }
 
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .card:hover {
+      box-shadow: 0 15px 45px rgba(0,0,0,0.3);
     }
 
-    .card h2 {
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.05);
+      transition: background 0.3s ease;
+    }
+
+    .card-header:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .card-header h2 {
+      font-size: 1.6rem;
       color: var(--main);
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
     }
 
-    .card ul {
-      list-style: none;
-      margin-top: 1rem;
-    }
-
-    .card li::before {
-      content: "▸ ";
+    .toggle {
+      font-size: 1.5rem;
       color: var(--main);
+      transition: transform 0.3s ease;
     }
 
-    h3 { color: var(--second); }
+    .card.active .toggle {
+      transform: rotate(180deg);
+    }
+
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, padding 0.4s ease;
+      padding: 0 2rem;
+    }
+
+    .card.active .card-content {
+      max-height: 1000px;
+      padding: 1.5rem 2rem 2rem;
+    }
 
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
-      margin-top: 1.2rem;
+      margin-top: 1rem;
     }
 
     .skill {
@@ -143,7 +162,11 @@
       background: rgba(255,255,255,0.12);
     }
 
-    /* ===== BUTTON ===== */
+    h3 { color: var(--second); }
+
+    ul { list-style: none; margin-top: 1rem; }
+    li::before { content: "▸ "; color: var(--main); }
+
     .btn {
       display: inline-block;
       margin-top: 1rem;
@@ -161,7 +184,6 @@
       transform: translateY(-2px);
     }
 
-    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 2rem;
@@ -172,17 +194,15 @@
     footer a { color: var(--main); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    /* ===== ANIMATIONS ===== */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1rem; }
-      .card { padding: 1.5rem; }
+      .card-header h2 { font-size: 1.3rem; }
     }
   </style>
 </head>
@@ -192,57 +212,87 @@
     <div class="hero-content">
       <h1>Mathéo Wery</h1>
       <p>💻 Étudiant en BTS SIO – Option SISR</p>
-      <a href="#profil" class="cta">Découvrir mon profil</a>
+      <a href="#profil" class="cta">Voir mon CV</a>
     </div>
   </header>
 
   <main>
-    <section id="profil" class="card">
-      <h2>👤 Profil</h2>
-      <p>Étudiant passionné d’informatique et de réseaux, je prépare un BTS SIO option SISR. Je souhaite devenir administrateur systèmes et réseaux, avec un fort intérêt pour la cybersécurité et l’automatisation.</p>
-    </section>
-
-    <section id="competences" class="card">
-      <h2>🛠️ Compétences</h2>
-      <div class="skills-grid">
-        <div class="skill"><h3>Réseaux</h3><p>Configuration Cisco, VLAN, DHCP, DNS</p></div>
-        <div class="skill"><h3>Systèmes</h3><p>Linux, Windows Server, scripts Bash</p></div>
-        <div class="skill"><h3>Cybersécurité</h3><p>Gestion des droits, supervision, sauvegardes</p></div>
-        <div class="skill"><h3>Outils</h3><p>Packet Tracer, PuTTY, Git, Wireshark</p></div>
-        <div class="skill"><h3>Développement</h3><p>HTML, CSS, Python, PowerShell</p></div>
+    <!-- PROFIL -->
+    <section class="card">
+      <div class="card-header">
+        <h2>👤 Profil</h2>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="card-content">
+        <p>Étudiant passionné d’informatique et de réseaux, je prépare un BTS SIO option SISR. Je souhaite devenir administrateur systèmes et réseaux, avec un fort intérêt pour la cybersécurité et l’automatisation.</p>
       </div>
     </section>
 
-    <section id="formation" class="card">
-      <h2>🎓 Formation</h2>
-      <ul>
-        <li><strong>BTS SIO – Option SISR</strong> – En cours au lycée des Granges</li>
-        <li><strong>Bac Pro SN option RISC</strong> – Lycée Pierre Desgranges (mention AB)</li>
-        <li>⚡ Habilitations électriques : B0, B1V, BR</li>
-        <li>🚗 Permis B obtenu</li>
-      </ul>
+    <!-- COMPÉTENCES -->
+    <section class="card">
+      <div class="card-header">
+        <h2>🛠️ Compétences</h2>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="card-content">
+        <div class="skills-grid">
+          <div class="skill"><h3>Réseaux</h3><p>Configuration Cisco, VLAN, DHCP, DNS</p></div>
+          <div class="skill"><h3>Systèmes</h3><p>Linux, Windows Server, scripts Bash</p></div>
+          <div class="skill"><h3>Cybersécurité</h3><p>Gestion des droits, supervision, sauvegardes</p></div>
+          <div class="skill"><h3>Outils</h3><p>Packet Tracer, PuTTY, Git, Wireshark</p></div>
+          <div class="skill"><h3>Développement</h3><p>HTML, CSS, Python, PowerShell</p></div>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="card">
-      <h2>💼 Expériences</h2>
-      <article>
-        <h3>Alternance – Loire Industrie (2025–présent)</h3>
-        <p>Maintenance réseau, support technique, scripts d’automatisation.</p>
-      </article>
-      <article>
-        <h3>Stage – Loire Industrie (2024)</h3>
-        <p>Déploiement d’équipements réseau et configuration IP.</p>
-      </article>
-      <article>
-        <h3>Stage – SEKENS (2023)</h3>
-        <p>Montage et maintenance de postes informatiques.</p>
-      </article>
+    <!-- FORMATION -->
+    <section class="card">
+      <div class="card-header">
+        <h2>🎓 Formation</h2>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="card-content">
+        <ul>
+          <li><strong>BTS SIO – Option SISR</strong> – En cours au lycée des Granges</li>
+          <li><strong>Bac Pro SN option RISC</strong> – Lycée Pierre Desgranges (mention AB)</li>
+          <li>⚡ Habilitations électriques : B0, B1V, BR</li>
+          <li>🚗 Permis B obtenu</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="contact" class="card">
-      <h2>📫 Contact</h2>
-      <p>Retrouvez-moi sur mon profil GitHub :</p>
-      <a href="https://github.com/MatheoWery" class="btn" target="_blank">🌐 github.com/MatheoWery</a>
+    <!-- EXPÉRIENCES -->
+    <section class="card">
+      <div class="card-header">
+        <h2>💼 Expériences</h2>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="card-content">
+        <article>
+          <h3>Alternance – Loire Industrie (2025–présent)</h3>
+          <p>Maintenance réseau, support technique, scripts d’automatisation.</p>
+        </article>
+        <article>
+          <h3>Stage – Loire Industrie (2024)</h3>
+          <p>Déploiement d’équipements réseau et configuration IP.</p>
+        </article>
+        <article>
+          <h3>Stage – SEKENS (2023)</h3>
+          <p>Montage et maintenance de postes informatiques.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card">
+      <div class="card-header">
+        <h2>📫 Contact</h2>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="card-content">
+        <p>Retrouvez-moi sur mon profil GitHub :</p>
+        <a href="https://github.com/MatheoWery" class="btn" target="_blank">🌐 github.com/MatheoWery</a>
+      </div>
     </section>
   </main>
 
@@ -251,13 +301,16 @@
   </footer>
 
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
+    const cards = document.querySelectorAll(".card");
 
-    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+    cards.forEach(card => {
+      const header = card.querySelector(".card-header");
+      header.addEventListener("click", () => {
+        const isActive = card.classList.contains("active");
+        cards.forEach(c => c.classList.remove("active"));
+        if (!isActive) card.classList.add("active");
+      });
+    });
   </script>
 </body>
 </html>
